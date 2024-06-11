@@ -1,0 +1,694 @@
+{
+  "address": "0xd18793cA49171cD6eD7E03fC4C73dC6354D09ebf",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "_childSavings",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "childAge",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address payable",
+          "name": "childAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "fatherAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "canWithdraw",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "_savings",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "savingsAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "target",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "endDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "purpose",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "isTime",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "forceWithdraw",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "inSaving",
+          "type": "bool"
+        },
+        {
+          "internalType": "enum Esusu.SavingsStatus",
+          "name": "savingStatus",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "_txHistory",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "savingsNonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "purpose",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address payable",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalDeposit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "childAddress",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "currentTimeStap",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_age",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_father",
+          "type": "address"
+        }
+      ],
+      "name": "depositChildSavingsReg",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_depositAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_savinsLen",
+          "type": "uint256"
+        }
+      ],
+      "name": "depositSave",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "forceWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_target",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_purpose",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_targetAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "initialSaving",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "number_of_deposits",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "savinsLen",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_savinsLen",
+          "type": "uint256"
+        }
+      ],
+      "name": "targetReach",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "txHistoryLen",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_child",
+          "type": "address"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x3ed6177f5b5df7717b5d629154b7134e772b08e1272f423eebe9df6a59c393bd",
+  "receipt": {
+    "to": null,
+    "from": "0x9dBa18e9b96b905919cC828C399d313EfD55D800",
+    "contractAddress": "0xd18793cA49171cD6eD7E03fC4C73dC6354D09ebf",
+    "transactionIndex": 1,
+    "gasUsed": "981736",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x43334a2b67d010dd7498d2858811466a447a846f5fd8efe3dee6b863ba0248d3",
+    "transactionHash": "0x3ed6177f5b5df7717b5d629154b7134e772b08e1272f423eebe9df6a59c393bd",
+    "logs": [],
+    "blockNumber": 5309117,
+    "cumulativeGasUsed": "1002736",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "abab984e0cd26189733e3e6e983e0ea0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_childSavings\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"childAge\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"childAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"fatherAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"canWithdraw\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"_savings\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"savingsAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"target\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"startDate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"endDate\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"purpose\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isTime\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"forceWithdraw\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"inSaving\",\"type\":\"bool\"},{\"internalType\":\"enum Esusu.SavingsStatus\",\"name\":\"savingStatus\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_txHistory\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"savingsNonce\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"purpose\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalDeposit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"childAddress\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"currentTimeStap\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_age\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_father\",\"type\":\"address\"}],\"name\":\"depositChildSavingsReg\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_depositAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_savinsLen\",\"type\":\"uint256\"}],\"name\":\"depositSave\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"forceWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_target\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_purpose\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_targetAmount\",\"type\":\"uint256\"}],\"name\":\"initialSaving\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"number_of_deposits\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"savinsLen\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_savinsLen\",\"type\":\"uint256\"}],\"name\":\"targetReach\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"txHistoryLen\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_child\",\"type\":\"address\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Esusu.sol\":\"Esusu\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Esusu.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ninterface IERC20Token {\\n    function transfer(address, uint256) external returns (bool);\\n    function approve(address, uint256) external returns (bool);\\n    function transferFrom(address, address, uint256) external returns (bool);\\n    function totalSupply() external view  returns (uint256);\\n    function balanceOf(address) external view  returns (uint256);\\n    function allowance(address, address) external view  returns (uint256);\\n\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n}\\n\\ncontract Esusu {\\n   \\n\\n    uint public number_of_deposits;\\n    uint256 public txHistoryLen;\\n    uint256 public savinsLen;\\n    // address of the child\\n    address payable public childAddress;\\n    uint256 public  currentTimeStap = block.timestamp;\\n    // to confirm the child is above or already 18 years with conversion of the block timestamp\\n    uint256 toGetPay = currentTimeStap + 18 * 365 * 24 * 60 * 60;\\n\\n \\n\\n\\n\\n    \\n    struct ChildSavings {\\n        uint256 childAge;\\n        uint256 amount;\\n        address payable childAddress;\\n        address fatherAddress;\\n        uint256 canWithdraw;\\n    }\\n\\n    struct TxHistory {\\n        uint256 savingsNonce;\\n        string purpose;\\n        uint256 amount;\\n        address payable owner;\\n        uint256 totalDeposit;\\n        uint256 time;\\n\\n    }\\n\\n    modifier onlYowner(address owner) {\\n        require(msg.sender == owner, \\\"Only the owner\\\");\\n        _;\\n    }\\n\\n    mapping (address => ChildSavings) public _childSavings;\\n    // mapping (address => TxHistory) public _txHistory;\\n    mapping(uint256 => mapping(address => TxHistory)) public _txHistory;\\n\\n\\n    constructor() {\\n        \\n    //     childAddress = _child;\\n    //     // this function is confirm the age with the timestap\\n    //     childAge = currentTimeStap + (_childAge * 365 * 24 * 60 * 60);\\n    }\\n\\n\\n    function withdraw(address _child) external {\\n        require(msg.sender == _childSavings[msg.sender].childAddress, \\\"cant withdraw fund because its not child address\\\" );\\n        // require(!_childSavings[_child].childAddress, \\\"cant withdraw fund because its not child address\\\" );\\n        ChildSavings storage savings = _childSavings[msg.sender];\\n        require(savings.childAge >= savings.canWithdraw, \\\"The Child must be avove 18 years of age before he or she can withdraw\\\");\\n        uint256 amount = _childSavings[_child].amount;\\n        childAddress.transfer(amount);\\n    }\\n\\n    function depositChildSavingsReg(uint256 _age, uint256 _amount, address _father) external payable  {\\n        ChildSavings storage savings = _childSavings[msg.sender];\\n\\n        // uint256 currentTimeStap = block.timestamp;\\n        uint256 getPay = currentTimeStap + _age * 365 * 24 * 60 * 60;\\n        savings.childAge =_age;\\n        savings.amount = _amount;\\n        savings.childAddress = payable (msg.sender);\\n        savings.fatherAddress = _father;\\n        savings.canWithdraw = getPay;\\n    }\\n\\n    enum SavingsStatus {\\n        INITIATESAVING,\\n        INPROGRESS,\\n        TARGETREACHED\\n    }\\n\\n    struct Savings {\\n        address payable owner;\\n        uint256 savingsAmount;\\n        uint256 target;\\n        uint256 startDate;\\n        uint256 endDate;\\n        string purpose;\\n        bool isTime;\\n        bool forceWithdraw;\\n        bool inSaving;\\n        SavingsStatus savingStatus;\\n        uint256 nonce;\\n    }\\n\\n    mapping  (uint256 => Savings) public  _savings;\\n    //1717926407\\n\\n    function initialSaving(uint256 _target, string memory _purpose, uint256 _targetAmount) public {\\n        Savings storage save = _savings[savinsLen];\\n        uint256 target = (_target * 24 * 60 * 60);\\n        save.owner = payable (msg.sender);\\n        save.startDate = block.timestamp;\\n        save.endDate = block.timestamp + target;\\n        save.purpose = _purpose;\\n        save.isTime = false;\\n        save.forceWithdraw = false;\\n        save.inSaving = false;\\n        save.savingStatus = SavingsStatus.INITIATESAVING;\\n        save.nonce = savinsLen;\\n        save.target = _targetAmount;\\n        savinsLen++;\\n\\n    }\\n\\n    function depositSave(uint256 _depositAmount, uint256 _savinsLen) public {\\n        require(msg.sender == _savings[_savinsLen].owner, \\\"You can't initial deposit\\\" );\\n        Savings storage save = _savings[_savinsLen];\\n        TxHistory storage txHistory = _txHistory[txHistoryLen][save.owner];\\n\\n        save.savingsAmount += _depositAmount;\\n        txHistory.amount += _depositAmount;\\n        save.savingStatus = SavingsStatus.INPROGRESS;\\n        txHistory.savingsNonce = _savinsLen;\\n        txHistory.owner = save.owner;\\n        txHistory.time = block.timestamp;\\n        txHistory.purpose = save.purpose;\\n        txHistoryLen++;\\n\\n\\n    }\\n    \\n    function targetReach(uint256 _savinsLen) public {\\n        require(msg.sender == _savings[_savinsLen].owner, \\\"You dont have account initial withdraw\\\" );\\n        Savings storage save = _savings[_savinsLen];\\n         require(save.target >= save.savingsAmount, \\\"The target must reach before you can withdraw \\\");\\n        uint256 amount = save.target;\\n        (bool sent, ) = payable(save.owner).call{value: amount}(\\\"\\\");\\n        require(sent, \\\"Failed to send Ether\\\");\\n        save.savingStatus = SavingsStatus.TARGETREACHED;\\n\\n\\n    }\\n    \\n    function forceWithdraw() public {}\\n}\",\"keccak256\":\"0x96119fec139ff5822d4b52075717bceb8090ac3f54c3a097089cad57c7a6a294\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6080604052426004819055610018906321d59f0061002d565b60055534801561002757600080fd5b50610054565b8082018082111561004e57634e487b7160e01b600052601160045260246000fd5b92915050565b610ffb806100636000396000f3fe6080604052600436106100dd5760003560e01c8063a84823c71161007f578063c265418111610059578063c2654181146102a4578063dd892370146102ba578063dea60575146102da578063f400fcca146102fa57600080fd5b8063a84823c714610240578063b13a186e14610256578063b8a947de1461026c57600080fd5b80634489cc56116100bb5780634489cc56146101c857806351cff8d9146101dd578063567fd10c146101fd5780637be80b391461023457600080fd5b80630139c022146100e25780631ccfeec9146101725780631fb89f6914610196575b600080fd5b3480156100ee57600080fd5b506101396100fd366004610a8e565b60066020526000908152604090208054600182015460028301546003840154600490940154929391926001600160a01b03918216929091169085565b6040805195865260208601949094526001600160a01b0392831693850193909352166060830152608082015260a0015b60405180910390f35b34801561017e57600080fd5b5061018860015481565b604051908152602001610169565b3480156101a257600080fd5b506101b66101b1366004610ab0565b61031a565b60405161016996959493929190610b22565b6101db6101d6366004610b69565b6103ed565b005b3480156101e957600080fd5b506101db6101f8366004610a8e565b61047b565b34801561020957600080fd5b5061021d610218366004610b9e565b6105f0565b6040516101699b9a99989796959493929190610bb7565b3480156101db57600080fd5b34801561024c57600080fd5b5061018860045481565b34801561026257600080fd5b5061018860005481565b34801561027857600080fd5b5060035461028c906001600160a01b031681565b6040516001600160a01b039091168152602001610169565b3480156102b057600080fd5b5061018860025481565b3480156102c657600080fd5b506101db6102d5366004610c5c565b6106e7565b3480156102e657600080fd5b506101db6102f5366004610b9e565b61078c565b34801561030657600080fd5b506101db610315366004610d20565b610935565b60076020908152600092835260408084209091529082529020805460018201805491929161034790610d42565b80601f016020809104026020016040519081016040528092919081815260200182805461037390610d42565b80156103c05780601f10610395576101008083540402835291602001916103c0565b820191906000526020600020905b8154815290600101906020018083116103a357829003601f168201915b50505050600283015460038401546004850154600590950154939491936001600160a01b03909116925086565b336000908152600660205260408120906104098561016d610d92565b610414906018610d92565b61041f90603c610d92565b61042a90603c610d92565b6004546104379190610daf565b948255506001810192909255600282018054336001600160a01b0319918216179091556003830180549091166001600160a01b039290921691909117905560040155565b336000818152600660205260409020600201546001600160a01b0316146105025760405162461bcd60e51b815260206004820152603060248201527f63616e742077697468647261772066756e64206265636175736520697473206e60448201526f6f74206368696c64206164647265737360801b60648201526084015b60405180910390fd5b33600090815260066020526040902060048101548154101561059a5760405162461bcd60e51b815260206004820152604560248201527f546865204368696c64206d7573742062652061766f766520313820796561727360448201527f206f6620616765206265666f7265206865206f72207368652063616e20776974606482015264686472617760d81b608482015260a4016104f9565b6001600160a01b038083166000908152600660205260408082206001015460035491519093919091169183156108fc02918491818181858888f193505050501580156105ea573d6000803e3d6000fd5b50505050565b6008602052600090815260409020805460018201546002830154600384015460048501546005860180546001600160a01b039096169694959394929391929161063890610d42565b80601f016020809104026020016040519081016040528092919081815260200182805461066490610d42565b80156106b15780601f10610686576101008083540402835291602001916106b1565b820191906000526020600020905b81548152906001019060200180831161069457829003601f168201915b5050506006840154600790940154929360ff8082169461010083048216945062010000830482169350630100000090920416908b565b600254600090815260086020526040812090610704856018610d92565b61070f90603c610d92565b61071a90603c610d92565b82546001600160a01b031916331783554260038401819055909150610740908290610daf565b6004830155600582016107538582610e11565b5060068201805463ffffffff19169055600280546007840155808301849055805490600061078083610ed1565b91905055505050505050565b6000818152600860205260409020546001600160a01b031633146108015760405162461bcd60e51b815260206004820152602660248201527f596f7520646f6e742068617665206163636f756e7420696e697469616c20776960448201526574686472617760d01b60648201526084016104f9565b600081815260086020526040902060018101546002820154101561087e5760405162461bcd60e51b815260206004820152602e60248201527f54686520746172676574206d757374207265616368206265666f726520796f7560448201526d01031b0b7103bb4ba34323930bb960951b60648201526084016104f9565b600281015481546040516000916001600160a01b03169083908381818185875af1925050503d80600081146108cf576040519150601f19603f3d011682016040523d82523d6000602084013e6108d4565b606091505b505090508061091c5760405162461bcd60e51b81526020600482015260146024820152732330b4b632b2103a379039b2b7321022ba3432b960611b60448201526064016104f9565b5050600601805463ff0000001916630200000017905550565b6000818152600860205260409020546001600160a01b0316331461099b5760405162461bcd60e51b815260206004820152601960248201527f596f752063616e277420696e697469616c206465706f7369740000000000000060448201526064016104f9565b60008181526008602090815260408083206001805485526007845282852082546001600160a01b031686529093529083209181018054919386926109e0908490610daf565b92505081905550838160020160008282546109fb9190610daf565b909155505060068201805463ff0000001916630100000017905582815581546003820180546001600160a01b0319166001600160a01b03909216919091179055426005808301919091556001820190610a5690840182610eea565b5060018054906000610a6783610ed1565b919050555050505050565b80356001600160a01b0381168114610a8957600080fd5b919050565b600060208284031215610aa057600080fd5b610aa982610a72565b9392505050565b60008060408385031215610ac357600080fd5b82359150610ad360208401610a72565b90509250929050565b6000815180845260005b81811015610b0257602081850181015186830182015201610ae6565b506000602082860101526020601f19601f83011685010191505092915050565b86815260c060208201526000610b3b60c0830188610adc565b6040830196909652506001600160a01b03939093166060840152608083019190915260a09091015292915050565b600080600060608486031215610b7e57600080fd5b8335925060208401359150610b9560408501610a72565b90509250925092565b600060208284031215610bb057600080fd5b5035919050565b600061016060018060a01b038e1683528c60208401528b60408401528a60608401528960808401528060a0840152610bf18184018a610adc565b91505086151560c083015285151560e083015284151561010083015260038410610c2b57634e487b7160e01b600052602160045260246000fd5b61012082019390935261014001529998505050505050505050565b634e487b7160e01b600052604160045260246000fd5b600080600060608486031215610c7157600080fd5b83359250602084013567ffffffffffffffff80821115610c9057600080fd5b818601915086601f830112610ca457600080fd5b813581811115610cb657610cb6610c46565b604051601f8201601f19908116603f01168101908382118183101715610cde57610cde610c46565b81604052828152896020848701011115610cf757600080fd5b826020860160208301376000602084830101528096505050505050604084013590509250925092565b60008060408385031215610d3357600080fd5b50508035926020909101359150565b600181811c90821680610d5657607f821691505b602082108103610d7657634e487b7160e01b600052602260045260246000fd5b50919050565b634e487b7160e01b600052601160045260246000fd5b8082028115828204841417610da957610da9610d7c565b92915050565b80820180821115610da957610da9610d7c565b601f821115610e0c57600081815260208120601f850160051c81016020861015610de95750805b601f850160051c820191505b81811015610e0857828155600101610df5565b5050505b505050565b815167ffffffffffffffff811115610e2b57610e2b610c46565b610e3f81610e398454610d42565b84610dc2565b602080601f831160018114610e745760008415610e5c5750858301515b600019600386901b1c1916600185901b178555610e08565b600085815260208120601f198616915b82811015610ea357888601518255948401946001909101908401610e84565b5085821015610ec15787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b600060018201610ee357610ee3610d7c565b5060010190565b818103610ef5575050565b610eff8254610d42565b67ffffffffffffffff811115610f1757610f17610c46565b610f2581610e398454610d42565b6000601f821160018114610f595760008315610f415750848201545b600019600385901b1c1916600184901b178455610fbe565b600085815260209020601f19841690600086815260209020845b83811015610f935782860154825560019586019590910190602001610f73565b5085831015610fb15781850154600019600388901b60f8161c191681555b50505060018360011b0184555b505050505056fea26469706673582212208f4cdf413b2f09ee937ed49c2a5fdd24b1c3a173e98d6bb2ed83f181dafaaac264736f6c63430008110033",
+  "deployedBytecode": "0x6080604052600436106100dd5760003560e01c8063a84823c71161007f578063c265418111610059578063c2654181146102a4578063dd892370146102ba578063dea60575146102da578063f400fcca146102fa57600080fd5b8063a84823c714610240578063b13a186e14610256578063b8a947de1461026c57600080fd5b80634489cc56116100bb5780634489cc56146101c857806351cff8d9146101dd578063567fd10c146101fd5780637be80b391461023457600080fd5b80630139c022146100e25780631ccfeec9146101725780631fb89f6914610196575b600080fd5b3480156100ee57600080fd5b506101396100fd366004610a8e565b60066020526000908152604090208054600182015460028301546003840154600490940154929391926001600160a01b03918216929091169085565b6040805195865260208601949094526001600160a01b0392831693850193909352166060830152608082015260a0015b60405180910390f35b34801561017e57600080fd5b5061018860015481565b604051908152602001610169565b3480156101a257600080fd5b506101b66101b1366004610ab0565b61031a565b60405161016996959493929190610b22565b6101db6101d6366004610b69565b6103ed565b005b3480156101e957600080fd5b506101db6101f8366004610a8e565b61047b565b34801561020957600080fd5b5061021d610218366004610b9e565b6105f0565b6040516101699b9a99989796959493929190610bb7565b3480156101db57600080fd5b34801561024c57600080fd5b5061018860045481565b34801561026257600080fd5b5061018860005481565b34801561027857600080fd5b5060035461028c906001600160a01b031681565b6040516001600160a01b039091168152602001610169565b3480156102b057600080fd5b5061018860025481565b3480156102c657600080fd5b506101db6102d5366004610c5c565b6106e7565b3480156102e657600080fd5b506101db6102f5366004610b9e565b61078c565b34801561030657600080fd5b506101db610315366004610d20565b610935565b60076020908152600092835260408084209091529082529020805460018201805491929161034790610d42565b80601f016020809104026020016040519081016040528092919081815260200182805461037390610d42565b80156103c05780601f10610395576101008083540402835291602001916103c0565b820191906000526020600020905b8154815290600101906020018083116103a357829003601f168201915b50505050600283015460038401546004850154600590950154939491936001600160a01b03909116925086565b336000908152600660205260408120906104098561016d610d92565b610414906018610d92565b61041f90603c610d92565b61042a90603c610d92565b6004546104379190610daf565b948255506001810192909255600282018054336001600160a01b0319918216179091556003830180549091166001600160a01b039290921691909117905560040155565b336000818152600660205260409020600201546001600160a01b0316146105025760405162461bcd60e51b815260206004820152603060248201527f63616e742077697468647261772066756e64206265636175736520697473206e60448201526f6f74206368696c64206164647265737360801b60648201526084015b60405180910390fd5b33600090815260066020526040902060048101548154101561059a5760405162461bcd60e51b815260206004820152604560248201527f546865204368696c64206d7573742062652061766f766520313820796561727360448201527f206f6620616765206265666f7265206865206f72207368652063616e20776974606482015264686472617760d81b608482015260a4016104f9565b6001600160a01b038083166000908152600660205260408082206001015460035491519093919091169183156108fc02918491818181858888f193505050501580156105ea573d6000803e3d6000fd5b50505050565b6008602052600090815260409020805460018201546002830154600384015460048501546005860180546001600160a01b039096169694959394929391929161063890610d42565b80601f016020809104026020016040519081016040528092919081815260200182805461066490610d42565b80156106b15780601f10610686576101008083540402835291602001916106b1565b820191906000526020600020905b81548152906001019060200180831161069457829003601f168201915b5050506006840154600790940154929360ff8082169461010083048216945062010000830482169350630100000090920416908b565b600254600090815260086020526040812090610704856018610d92565b61070f90603c610d92565b61071a90603c610d92565b82546001600160a01b031916331783554260038401819055909150610740908290610daf565b6004830155600582016107538582610e11565b5060068201805463ffffffff19169055600280546007840155808301849055805490600061078083610ed1565b91905055505050505050565b6000818152600860205260409020546001600160a01b031633146108015760405162461bcd60e51b815260206004820152602660248201527f596f7520646f6e742068617665206163636f756e7420696e697469616c20776960448201526574686472617760d01b60648201526084016104f9565b600081815260086020526040902060018101546002820154101561087e5760405162461bcd60e51b815260206004820152602e60248201527f54686520746172676574206d757374207265616368206265666f726520796f7560448201526d01031b0b7103bb4ba34323930bb960951b60648201526084016104f9565b600281015481546040516000916001600160a01b03169083908381818185875af1925050503d80600081146108cf576040519150601f19603f3d011682016040523d82523d6000602084013e6108d4565b606091505b505090508061091c5760405162461bcd60e51b81526020600482015260146024820152732330b4b632b2103a379039b2b7321022ba3432b960611b60448201526064016104f9565b5050600601805463ff0000001916630200000017905550565b6000818152600860205260409020546001600160a01b0316331461099b5760405162461bcd60e51b815260206004820152601960248201527f596f752063616e277420696e697469616c206465706f7369740000000000000060448201526064016104f9565b60008181526008602090815260408083206001805485526007845282852082546001600160a01b031686529093529083209181018054919386926109e0908490610daf565b92505081905550838160020160008282546109fb9190610daf565b909155505060068201805463ff0000001916630100000017905582815581546003820180546001600160a01b0319166001600160a01b03909216919091179055426005808301919091556001820190610a5690840182610eea565b5060018054906000610a6783610ed1565b919050555050505050565b80356001600160a01b0381168114610a8957600080fd5b919050565b600060208284031215610aa057600080fd5b610aa982610a72565b9392505050565b60008060408385031215610ac357600080fd5b82359150610ad360208401610a72565b90509250929050565b6000815180845260005b81811015610b0257602081850181015186830182015201610ae6565b506000602082860101526020601f19601f83011685010191505092915050565b86815260c060208201526000610b3b60c0830188610adc565b6040830196909652506001600160a01b03939093166060840152608083019190915260a09091015292915050565b600080600060608486031215610b7e57600080fd5b8335925060208401359150610b9560408501610a72565b90509250925092565b600060208284031215610bb057600080fd5b5035919050565b600061016060018060a01b038e1683528c60208401528b60408401528a60608401528960808401528060a0840152610bf18184018a610adc565b91505086151560c083015285151560e083015284151561010083015260038410610c2b57634e487b7160e01b600052602160045260246000fd5b61012082019390935261014001529998505050505050505050565b634e487b7160e01b600052604160045260246000fd5b600080600060608486031215610c7157600080fd5b83359250602084013567ffffffffffffffff80821115610c9057600080fd5b818601915086601f830112610ca457600080fd5b813581811115610cb657610cb6610c46565b604051601f8201601f19908116603f01168101908382118183101715610cde57610cde610c46565b81604052828152896020848701011115610cf757600080fd5b826020860160208301376000602084830101528096505050505050604084013590509250925092565b60008060408385031215610d3357600080fd5b50508035926020909101359150565b600181811c90821680610d5657607f821691505b602082108103610d7657634e487b7160e01b600052602260045260246000fd5b50919050565b634e487b7160e01b600052601160045260246000fd5b8082028115828204841417610da957610da9610d7c565b92915050565b80820180821115610da957610da9610d7c565b601f821115610e0c57600081815260208120601f850160051c81016020861015610de95750805b601f850160051c820191505b81811015610e0857828155600101610df5565b5050505b505050565b815167ffffffffffffffff811115610e2b57610e2b610c46565b610e3f81610e398454610d42565b84610dc2565b602080601f831160018114610e745760008415610e5c5750858301515b600019600386901b1c1916600185901b178555610e08565b600085815260208120601f198616915b82811015610ea357888601518255948401946001909101908401610e84565b5085821015610ec15787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b600060018201610ee357610ee3610d7c565b5060010190565b818103610ef5575050565b610eff8254610d42565b67ffffffffffffffff811115610f1757610f17610c46565b610f2581610e398454610d42565b6000601f821160018114610f595760008315610f415750848201545b600019600385901b1c1916600184901b178455610fbe565b600085815260209020601f19841690600086815260209020845b83811015610f935782860154825560019586019590910190602001610f73565b5085831015610fb15781850154600019600388901b60f8161c191681555b50505060018360011b0184555b505050505056fea26469706673582212208f4cdf413b2f09ee937ed49c2a5fdd24b1c3a173e98d6bb2ed83f181dafaaac264736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 70,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "number_of_deposits",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 72,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "txHistoryLen",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 74,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "savinsLen",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 76,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "childAddress",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_address_payable"
+      },
+      {
+        "astId": 80,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "currentTimeStap",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 93,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "toGetPay",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 136,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "_childSavings",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_mapping(t_address,t_struct(ChildSavings)104_storage)"
+      },
+      {
+        "astId": 143,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "_txHistory",
+        "offset": 0,
+        "slot": "7",
+        "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(TxHistory)117_storage))"
+      },
+      {
+        "astId": 294,
+        "contract": "contracts/Esusu.sol:Esusu",
+        "label": "_savings",
+        "offset": 0,
+        "slot": "8",
+        "type": "t_mapping(t_uint256,t_struct(Savings)289_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_address_payable": {
+        "encoding": "inplace",
+        "label": "address payable",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_enum(SavingsStatus)265": {
+        "encoding": "inplace",
+        "label": "enum Esusu.SavingsStatus",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_struct(ChildSavings)104_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct Esusu.ChildSavings)",
+        "numberOfBytes": "32",
+        "value": "t_struct(ChildSavings)104_storage"
+      },
+      "t_mapping(t_address,t_struct(TxHistory)117_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct Esusu.TxHistory)",
+        "numberOfBytes": "32",
+        "value": "t_struct(TxHistory)117_storage"
+      },
+      "t_mapping(t_uint256,t_mapping(t_address,t_struct(TxHistory)117_storage))": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => mapping(address => struct Esusu.TxHistory))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_struct(TxHistory)117_storage)"
+      },
+      "t_mapping(t_uint256,t_struct(Savings)289_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct Esusu.Savings)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Savings)289_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(ChildSavings)104_storage": {
+        "encoding": "inplace",
+        "label": "struct Esusu.ChildSavings",
+        "members": [
+          {
+            "astId": 95,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "childAge",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 97,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "amount",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 99,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "childAddress",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address_payable"
+          },
+          {
+            "astId": 101,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "fatherAddress",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address"
+          },
+          {
+            "astId": 103,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "canWithdraw",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "160"
+      },
+      "t_struct(Savings)289_storage": {
+        "encoding": "inplace",
+        "label": "struct Esusu.Savings",
+        "members": [
+          {
+            "astId": 267,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address_payable"
+          },
+          {
+            "astId": 269,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "savingsAmount",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 271,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "target",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 273,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "startDate",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 275,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "endDate",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 277,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "purpose",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 279,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "isTime",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_bool"
+          },
+          {
+            "astId": 281,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "forceWithdraw",
+            "offset": 1,
+            "slot": "6",
+            "type": "t_bool"
+          },
+          {
+            "astId": 283,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "inSaving",
+            "offset": 2,
+            "slot": "6",
+            "type": "t_bool"
+          },
+          {
+            "astId": 286,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "savingStatus",
+            "offset": 3,
+            "slot": "6",
+            "type": "t_enum(SavingsStatus)265"
+          },
+          {
+            "astId": 288,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "nonce",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "256"
+      },
+      "t_struct(TxHistory)117_storage": {
+        "encoding": "inplace",
+        "label": "struct Esusu.TxHistory",
+        "members": [
+          {
+            "astId": 106,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "savingsNonce",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 108,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "purpose",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 110,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "amount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 112,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "owner",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address_payable"
+          },
+          {
+            "astId": 114,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "totalDeposit",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 116,
+            "contract": "contracts/Esusu.sol:Esusu",
+            "label": "time",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "192"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
