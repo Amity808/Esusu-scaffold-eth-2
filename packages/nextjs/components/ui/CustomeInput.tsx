@@ -12,7 +12,7 @@ const CustomInput = ({
       <input
         id={id}
         name={name}
-        className={`w-full py-3 rounded-md flex items-center px-3 bg-[#EAF0F7]  ${className}`}
+        className={` py-3 rounded-md flex items-center px-3 bg-[#EAF0F7] text-black  ${className}`}
         {...props}
       />
     </div>

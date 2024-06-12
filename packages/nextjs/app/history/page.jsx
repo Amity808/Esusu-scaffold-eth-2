@@ -1,8 +1,9 @@
 import React from 'react'
 import bg from "../../public/homebg.png";
 import Navbar from "../../components/Navbar"
-import Trasactionhistory from "../../components/Trasactionhistory"
+// import Trasactionhistory from "../../components/Trasactionhistory"
 import HistoryCard from '../../components/HistoryCard';
+import AllTxHistory from '../../components/AllTxHistory';
 
 const History = () => {
     const headerStyle = {
@@ -26,7 +27,7 @@ const History = () => {
         <div>
             <Navbar />
         </div>
-        <Trasactionhistory />
+        <AllTxHistory />
         <HistoryCard />
     </div>
   )
