@@ -94,7 +94,7 @@ const ChildSavings = () => {
           {/* <div className=" flex justify-center"> */}
           <button className="text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]" onClick={savepromise} disabled={isPending} type="submit">Save</button>
           {/* </div> */}
-        <button className="btn">Close</button>
+        <button className="btn text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]">Close</button>
       </form>
     </div>
   </div>

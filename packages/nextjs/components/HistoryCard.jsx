@@ -30,7 +30,7 @@ const getSavings = useCallback(() => {
     SavingsStatus: fetchData[9],
     nonce: fetchData[10],
   })
-}, [fetchSpace]);
+}, [fetchData]);
 
 useEffect(() => {
   getSavings()

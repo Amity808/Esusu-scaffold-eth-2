@@ -10,7 +10,7 @@ const Header = () => {
             Save For Feature, <br /> 
           </p>
           <p className="font-bold text-white">
-          It's Yours, Start Today. <br /> 
+          It &lsquo;s Yours, Start Today. <br /> 
           </p>
         </div>
         <div>
