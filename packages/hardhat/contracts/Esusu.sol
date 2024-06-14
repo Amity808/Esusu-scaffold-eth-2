@@ -27,15 +27,17 @@ contract Esusu {
 
  
 
-
+    event Received(address sender, uint256 amount);
 
     
     struct ChildSavings {
         uint256 childAge;
         uint256 amount;
+        uint256 targetChild;
         address payable childAddress;
         address fatherAddress;
         uint256 canWithdraw;
+        bool deposited;
     }
 
     struct TxHistory {
@@ -60,31 +62,54 @@ contract Esusu {
 
     constructor() {
         
-    //     childAddress = _child;
-    //     // this function is confirm the age with the timestap
-    //     childAge = currentTimeStap + (_childAge * 365 * 24 * 60 * 60);
     }
 
 
     function withdraw(address _child) external {
         require(msg.sender == _childSavings[msg.sender].childAddress, "cant withdraw fund because its not child address" );
         // require(!_childSavings[_child].childAddress, "cant withdraw fund because its not child address" );
+        
         ChildSavings storage savings = _childSavings[msg.sender];
-        require(savings.childAge >= savings.canWithdraw, "The Child must be avove 18 years of age before he or she can withdraw");
+        require(savings.targetChild >= savings.amount, "Not yet target");
         uint256 amount = _childSavings[_child].amount;
-        childAddress.transfer(amount);
+
+
+        (bool sent, ) = payable(savings.childAddress).call{value: amount}("");
+        require(sent, "Failed to send Ether");
+
+         _childSavings[_child].amount = 0;
+          _childSavings[_child].targetChild = 0;
+
     }
 
-    function depositChildSavingsReg(uint256 _age, uint256 _amount, address _father) external payable  {
+    function depositChildSavingsReg(uint256 _age, address _father) external payable  {
         ChildSavings storage savings = _childSavings[msg.sender];
-
         // uint256 currentTimeStap = block.timestamp;
-        uint256 getPay = currentTimeStap + _age * 365 * 24 * 60 * 60;
+        // uint256 getPay = currentTimeStap + _age * 365 * 24 * 60 * 60;
+        savings.targetChild = _age;
         savings.childAge =_age;
-        savings.amount = _amount;
+        // savings.amount += ;
         savings.childAddress = payable (msg.sender);
         savings.fatherAddress = _father;
-        savings.canWithdraw = getPay;
+        // savings.canWithdraw = getPay;
+        savings.deposited = true;
+    }
+    function depositForChild(address _childAddress) external payable  {
+        ChildSavings storage savings = _childSavings[_childAddress];
+        require(msg.value > 0, "Deposit amount must be greater than zero");
+        
+        savings.amount += msg.value;
+        
+        savings.deposited = true;
+
+        // (bool sent, ) = address(this).call{value: _amount}("");
+        // require(sent, "Failed to send Ether");
+    }
+
+    function saveMoreForChild(address _childAddress) external payable  {
+        ChildSavings storage savings = _childSavings[_childAddress];
+        require(msg.value > 0, "Deposit amount must be greater than zero");
+        savings.amount += msg.value;
     }
 
     enum SavingsStatus {
@@ -111,7 +136,7 @@ contract Esusu {
     //1717926407
 
     function initialSaving(uint256 _target, string memory _purpose, uint256 _targetAmount) public {
-        Savings storage save = _savings[savinsLen];
+        Savings storage save = _savings[savinsLen++];
         uint256 target = (_target * 24 * 60 * 60);
         save.owner = payable (msg.sender);
         save.startDate = block.timestamp;
@@ -123,17 +148,18 @@ contract Esusu {
         save.savingStatus = SavingsStatus.INITIATESAVING;
         save.nonce = savinsLen;
         save.target = _targetAmount;
-        savinsLen++;
+        // savinsLen++;
 
     }
 
-    function depositSave(uint256 _depositAmount, uint256 _savinsLen) public {
-        require(msg.sender == _savings[_savinsLen].owner, "You can't initial deposit" );
+    function depositSave(uint256 _savinsLen) public payable  {
+        require(_savings[_savinsLen].owner == msg.sender, "You can't initial deposit" );
         Savings storage save = _savings[_savinsLen];
         TxHistory storage txHistory = _txHistory[txHistoryLen][save.owner];
+        require(msg.value > 0, "Deposit amount must be greater than zero");
 
-        save.savingsAmount += _depositAmount;
-        txHistory.amount += _depositAmount;
+        save.savingsAmount += msg.value;
+        txHistory.amount += msg.value;
         save.savingStatus = SavingsStatus.INPROGRESS;
         txHistory.savingsNonce = _savinsLen;
         txHistory.owner = save.owner;
@@ -141,7 +167,8 @@ contract Esusu {
         txHistory.purpose = save.purpose;
         txHistoryLen++;
 
-
+        // (bool sent, ) = address(this).call{value: _depositAmount}("");
+        // require(sent, "Failed to send Ether");
     }
     
     function targetReach(uint256 _savinsLen) public {
@@ -149,12 +176,25 @@ contract Esusu {
         Savings storage save = _savings[_savinsLen];
          require(save.target >= save.savingsAmount, "The target must reach before you can withdraw ");
         uint256 amount = save.target;
+
         (bool sent, ) = payable(save.owner).call{value: amount}("");
         require(sent, "Failed to send Ether");
+        save.target = 0;
+        save.savingsAmount = 0;
         save.savingStatus = SavingsStatus.TARGETREACHED;
-
-
     }
     
     function forceWithdraw() public {}
+
+    
+
+    // Function to receive Ether. msg.data must be empty
+    // receive() external payable {
+    //     emit Received(msg.sender, msg.value);
+    // }
+
+    receive() external payable {}
+
+        fallback() external payable {}
+
 }

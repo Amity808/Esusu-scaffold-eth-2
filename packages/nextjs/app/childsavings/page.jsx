@@ -5,6 +5,8 @@ import bg from "~~/public/homebg.png";
 import Navbar from "~~/components/Navbar"
 import ChildSavings from "~~/components/ChildSavings"
 import ChildHistory from "~~/components/ChildHistory"
+import ChildSaveDeposit from '../../components/ChildSaveDeposit';
+import { useAccount } from 'wagmi';
 
 const Childsavings = () => {
     const headerStyle = {
@@ -23,12 +25,15 @@ const Childsavings = () => {
           backgroundPosition: "center", // You can adjust this as needed
         },
       };
+
+      const { address } = useAccount()
   return (
     <div style={headerStyle} className=' h-screen'>
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
         </div>
         <ChildSavings />
+        <ChildSaveDeposit address={address} />
         <ChildHistory />
     </div>
   )

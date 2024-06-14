@@ -5,10 +5,10 @@ import { useScaffoldWriteContract } from "../hooks/scaffold-eth";
 import CustomInput from "./ui/CustomeInput";
 import { toast } from "react-toastify";
 import { parseEther } from "viem";
-import { useAccount } from "wagmi";
-const Deposit = ({ id }) => {
+
+const ChildSaveDeposit = ({ address }) => {
   const [Amount, setAmount] = useState("");
-const { address } = useAccount()
+
   const { writeContractAsync, isPending } = useScaffoldWriteContract("Esusu");
 
   const handleClear = () => {
@@ -21,8 +21,8 @@ const { address } = useAccount()
     e.preventDefault();
     try {
       await writeContractAsync({
-        functionName: "depositForChild",
-        args: [id],
+        functionName: "depositSave",
+        args: [address],
         value: parseEther(Amount),
       });
       handleClear();
@@ -35,7 +35,7 @@ const { address } = useAccount()
     <>
       {/* Dialogo */}
       <button className="btn" onClick={() => document.getElementById("my_modal_5").showModal()}>
-        Deposit
+        Save
       </button>
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
@@ -44,16 +44,14 @@ const { address } = useAccount()
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
 
-              <div>
+              {/* <div>
                 <CustomInput
                   onChange={e => setAmount(e.target.value)}
                   className=" w-[400px]"
                   placeholders="amount"
                   type="number"
                 />
-              </div>
-              <div></div>
-              {/* <div className=" flex justify-center"> */}
+              </div> */}
               <button
                 className="text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]"
                 onClick={initialSave}
@@ -62,7 +60,7 @@ const { address } = useAccount()
               >
                 Save
               </button>
-              {/* </div> */}
+              
               <button className="btn text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]">
                 Close
               </button>
@@ -74,4 +72,4 @@ const { address } = useAccount()
   );
 };
 
-export default Deposit;
+export default ChildSaveDeposit;

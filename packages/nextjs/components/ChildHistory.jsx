@@ -1,9 +1,10 @@
 "use client"
 import React, { useState, useEffect, useCallback } from 'react'
-import { useScaffoldReadContract } from "../hooks/scaffold-eth";
+import { useScaffoldReadContract, useScaffoldWriteContract } from "../hooks/scaffold-eth";
 import { useAccount } from 'wagmi';
 import { Address } from "~~/components/scaffold-eth";
 import Link from 'next/link';
+import ChildSaveDeposit from "~~/components/ChildSaveDeposit"
 
 const ChildHistory = () => {
 
@@ -16,16 +17,34 @@ const ChildHistory = () => {
       functionName: "_childSavings",
       args: [address]
   });
+
+  const { writeContractAsync, isPending } = useScaffoldWriteContract("Esusu")
   
+  const withdraw = async () => {
+    try {
+
+      await writeContractAsync({
+        functionName: "withdraw",
+        args: [address],
+      })
+     
+      console.log("Saved successfully")
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
+
   const getSavings = useCallback(() => {
     if (!fetchData) return null;
   
     setHistoryData({
         childAge: fetchData[0],
         amount: Number(fetchData[1]),
-        childAddress: fetchData[2],
-        fatherAddress: fetchData[3],
-        canWithdraw: Number(fetchData[4])
+        targetChild: Number(fetchData[2]),
+        childAddress: fetchData[3],
+        fatherAddress: fetchData[4],
+        canWithdraw: Number(fetchData[5])
     })
   }, [fetchData]);
   
@@ -53,14 +72,22 @@ const ChildHistory = () => {
             Current Amount: {historyData?.amount}
           </p>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            Child age: {historyData?.childAge}
+            Child Target: {historyData?.childAge}
           </p>
-          <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
+          <div className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
             <Link target="_blank" href={'/'}> {readableDate}</Link>
             <Link target="_blank" href={`/space/`} className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
               With draw Date 
             </Link>
-          </button>
+          </div>
+          <div>
+            {historyData?.targetChild >= historyData?.amount ? <>
+            </> :<><p>You have not reach your target</p></>}
+            <p>End Date: {readableDate}</p>
+            <button className="mt-4 text-sm text-white bg-black rounded-full px-3 py-1" onClick={withdraw}>Withdraw</button>
+          </div>
+          <p>b</p>
+          <ChildSaveDeposit address={historyData?.childAddress} />
         </div>
     </div>
   )

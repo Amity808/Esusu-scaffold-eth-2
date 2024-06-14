@@ -3,6 +3,7 @@ import CustomInput from "../components/ui/CustomeInput"
 import { toast } from "react-toastify";
 import { useScaffoldWriteContract, useScaffoldReadContract  } from "../hooks/scaffold-eth";
 import { useAccount } from "wagmi";
+import { parseEther } from "viem";
 
 const ChildSavings = () => {
 
@@ -42,7 +43,8 @@ const ChildSavings = () => {
     try {
       await writeContractAsync({
         functionName: "depositChildSavingsReg",
-        args: [age, saveAmount, gurdianAddress]
+        args: [parseInt(age), gurdianAddress],
+        value: parseEther(amount)
       })
       handleClear();
     } catch (error) {
@@ -66,14 +68,14 @@ const ChildSavings = () => {
         {/* if there is a button in form, it will close the modal */}
         <div>
             <CustomInput onChange={(e) => setAge(e.target.value)} 
-            className=" w-[400px] text-white"
+            className=" w-[400px] text-black"
               placeholders="Enter Age"
               type="number"
             />
           </div>
           <div>
             <CustomInput 
-            className=" w-[400px] text-white"
+            className=" w-[400px] text-black"
               placeholders={"Amount"}
               onChange={(e) => setAmount(e.target.value)}
               type="number"
@@ -92,9 +94,9 @@ const ChildSavings = () => {
           <div>
           </div>
           {/* <div className=" flex justify-center"> */}
-          <button className="text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]" onClick={savepromise} disabled={isPending} type="submit">Save</button>
+          <button className="text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px] mr-3" onClick={savepromise} disabled={isPending} type="submit">Save</button>
           {/* </div> */}
-        <button className="btn text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]">Close</button>
+        <button className="text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px] mr-3">Close</button>
       </form>
     </div>
   </div>

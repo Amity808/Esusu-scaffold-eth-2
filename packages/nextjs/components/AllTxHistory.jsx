@@ -13,13 +13,14 @@ const AllTxHistory = () => {
 
     const saveLen = savingsLength ? Number(savingsLength.toString()) : 0;
 
-
+    console.log(saveLen)
     const getAllHistoryInitalSavings = () => {
         if(!savingsLength) return null;
         const deposit = [];
         for (let i = 0; i < saveLen; i++) {
             deposit.push(<HistoryCard id={i} />)
         }
+        return deposit
     }
   return (
     <div>

@@ -30,7 +30,7 @@ const TargetSavings: NextPage = () => {
             <Navbar />
         </div>
         <InitialSavings />
-        <Deposit />
+        {/* <Deposit /> */}
     </div>
   )
 }

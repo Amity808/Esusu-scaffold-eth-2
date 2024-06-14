@@ -28,7 +28,7 @@ const History = () => {
             <Navbar />
         </div>
         <AllTxHistory />
-        <HistoryCard />
+        <HistoryCard id={1} />
     </div>
   )
 }

@@ -7,12 +7,35 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   10081: {
     Esusu: {
-      address: "0xd18793cA49171cD6eD7E03fC4C73dC6354D09ebf",
+      address: "0x230F9E43A2CF0f9D329EED3573607b400d0D891b",
       abi: [
         {
           inputs: [],
           stateMutability: "nonpayable",
           type: "constructor",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "address",
+              name: "sender",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "Received",
+          type: "event",
+        },
+        {
+          stateMutability: "payable",
+          type: "fallback",
         },
         {
           inputs: [
@@ -35,6 +58,11 @@ const deployedContracts = {
               type: "uint256",
             },
             {
+              internalType: "uint256",
+              name: "targetChild",
+              type: "uint256",
+            },
+            {
               internalType: "address payable",
               name: "childAddress",
               type: "address",
@@ -48,6 +76,11 @@ const deployedContracts = {
               internalType: "uint256",
               name: "canWithdraw",
               type: "uint256",
+            },
+            {
+              internalType: "bool",
+              name: "deposited",
+              type: "bool",
             },
           ],
           stateMutability: "view",
@@ -205,11 +238,6 @@ const deployedContracts = {
               type: "uint256",
             },
             {
-              internalType: "uint256",
-              name: "_amount",
-              type: "uint256",
-            },
-            {
               internalType: "address",
               name: "_father",
               type: "address",
@@ -223,10 +251,18 @@ const deployedContracts = {
         {
           inputs: [
             {
-              internalType: "uint256",
-              name: "_depositAmount",
-              type: "uint256",
+              internalType: "address",
+              name: "_childAddress",
+              type: "address",
             },
+          ],
+          name: "depositForChild",
+          outputs: [],
+          stateMutability: "payable",
+          type: "function",
+        },
+        {
+          inputs: [
             {
               internalType: "uint256",
               name: "_savinsLen",
@@ -235,7 +271,7 @@ const deployedContracts = {
           ],
           name: "depositSave",
           outputs: [],
-          stateMutability: "nonpayable",
+          stateMutability: "payable",
           type: "function",
         },
         {
@@ -279,6 +315,19 @@ const deployedContracts = {
             },
           ],
           stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_childAddress",
+              type: "address",
+            },
+          ],
+          name: "saveMoreForChild",
+          outputs: [],
+          stateMutability: "payable",
           type: "function",
         },
         {
@@ -332,6 +381,10 @@ const deployedContracts = {
           outputs: [],
           stateMutability: "nonpayable",
           type: "function",
+        },
+        {
+          stateMutability: "payable",
+          type: "receive",
         },
       ],
       inheritedFunctions: {},

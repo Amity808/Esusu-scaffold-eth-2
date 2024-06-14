@@ -4,6 +4,7 @@ import React, { useState } from "react";
 // import { PlaceholdersAndVanishInput } from "~~/components/ui/placeholders-and-vanish-input";
 import { toast } from "react-toastify";
 import { IoMdCloseCircle } from "react-icons/io";
+import { parseEther } from "viem";
 import CustomInput from "~~/components/ui/CustomeInput"
 import { useScaffoldWriteContract } from "../hooks/scaffold-eth"
 
@@ -31,9 +32,10 @@ const InitialSavings = () => {
 
       await writeContractAsync({
         functionName: "initialSaving",
-        args: [days, purpose, targetAmount],
+        args: [days, purpose, parseEther(targetAmount)],
       })
      
+      handleClear()
       console.log("Saved successfully")
       handleClear()
     } catch (error) {
@@ -42,60 +44,50 @@ const InitialSavings = () => {
     }
   }
   return (
-    <div className=" mt-14">
-      <button
-        id="modalBioDate"
-        type="button"
-        data-bs-toggle="modalBioData"
-        data-bs-target="#modalCenter"
-        className=" text-black font-bold text-lg border-2 rounded-xl py-1 bg-[#fdfeff] px-3 flex items-center mr-10 flex-col text-center drop-shadow-xl"
-        onClick={() => setToggle(true)}
-      >
-        Initial Savings
-      </button>
-     {toggle && (
       <>
-       <div className=" text-white text-lg font-bold flex justify-center items-center flex-col pt-10 pb-10 gap-7 w-[600px] rounded-2xl bg-slate-100">
-        <p>Welcome address</p>
-        <p className=" text-center">
-          Connect your child wallet address <br /> Any address connect to the
-          dapp will be regarded as your child
-        </p>
-      </div>
-      <div>
-        <form className=" flex flex-col gap-5 justify-center items-center" onSubmit={initialSave}>
-          <div>
+   
+    
+    {/* dif */}
+
+    <button className="btn" onClick={()=>document.getElementById('my_modal_5').showModal()}>Initial Savings</button>
+<dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Secure your future.</h3>
+    <p className="py-4">Press ESC key or click the button below to close</p>
+    <div className="modal-action flex justify-center items-center">
+      <form method="dialog" >
+        {/* if there is a button in form, it will close the modal */}<div>
           <CustomInput onChange={(e) => setDays(e.target.value)} 
-            className=" w-[400px] text-white"
+            className=" w-[400px] text-black"
               placeholders="numbers of days"
               type="number"
             />
           </div>
           <div>
           <CustomInput onChange={(e) => setPurpose(e.target.value)} 
-            className=" w-[400px] text-white"
+            className=" w-[400px] text-black"
               placeholders="What is the purpose"
               type="text"
             />
           </div>
           <div>
           <CustomInput onChange={(e) => setTargetAmount(e.target.value)} 
-            className=" w-[400px] text-white"
+            className=" w-[400px] text-black"
               placeholders="What's your target amount"
               type="number"
             />
           </div>
-          <div className=" flex justify-center">
-          <button className="text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]" type="submit">Save</button>
-          <button type="button" onClick={() => setToggle(false)}>
-                  <IoMdCloseCircle size={30} color="#06102b" />
-          </button>
+          <div>
           </div>
-        </form>
-      </div>
-      </>
-     )}
+          {/* <div className=" flex justify-center"> */}
+          <button className="text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]" onSubmit={initialSave} disabled={isPending} type="submit">Save</button>
+          {/* </div> */}
+        <button className="text-white p-4 bg-blue-500/60 rounded-lg text-lg font-bold w-[100px]">Close</button>
+      </form>
     </div>
+  </div>
+</dialog>
+    </>
   );
 };
 

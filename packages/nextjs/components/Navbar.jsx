@@ -1,11 +1,11 @@
 import React from "react";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import homebg from "../public/homebg.png";
-import Link from "next/link";
+// import { ConnectButton } from "@rainbow-me/rainbowkit";
+// import homebg from "../public/homebg.png";
+// import Link from "next/link";
 const Navbar = () => {
   return (
     <div className={` text-white font-medium text-lg flex flex-row justify-around pt-8`}>
-      <div>
+      {/* <div>
         <p className=" text-3xl font-bold">Esusu</p>
       </div>
       <div>
@@ -18,7 +18,7 @@ const Navbar = () => {
             <ConnectButton />
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
