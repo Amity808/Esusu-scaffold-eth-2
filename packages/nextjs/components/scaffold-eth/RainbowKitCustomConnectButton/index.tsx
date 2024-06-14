@@ -10,7 +10,7 @@ import { Address } from "viem";
 import { useNetworkColor } from "~~/hooks/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { getBlockExplorerAddressLink } from "~~/utils/scaffold-eth";
-import { BlackCreateWalletButton } from "~~/components/BlackCreateWalletButton";
+// import { BlackCreateWalletButton } from "~~/components/BlackCreateWalletButton";
 
 /**
  * Custom Wagmi Connect Button (watch balance + custom design)
