@@ -14,7 +14,7 @@ const contentWrapperStyle = {
   position: 'relative',
 };
  
-function Gradient({ children, style, isAnimationDisabled = false }) {
+function Gradient({ children: any, style : any, isAnimationDisabled = false }) {
   const [isAnimating, setIsAnimating] = useState(false);
   const gradientStyle = useMemo(() => {
     const rotate = isAnimating ? '720deg' : '0deg';
