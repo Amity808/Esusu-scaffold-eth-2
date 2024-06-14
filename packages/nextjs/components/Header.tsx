@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
-import { BlackCreateWalletButton } from "./BlackCreateWalletButton";
+// import { BlackCreateWalletButton } from "./BlackCreateWalletButton";
 
 type HeaderMenuLink = {
   label: string;
