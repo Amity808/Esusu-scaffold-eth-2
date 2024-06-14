@@ -32,14 +32,14 @@ export function DebugContracts() {
         <>
           {contractNames.length > 1 && (
             <div className="flex flex-row gap-2 w-full max-w-7xl pb-1 px-6 lg:px-10 flex-wrap">
-              {contractNames.map(contractName => (
+              {contractNames.map((contractName) => (
                 <button
                   className={`btn btn-secondary btn-sm font-light hover:border-transparent ${
                     contractName === selectedContract
                       ? "bg-base-300 hover:bg-base-300 no-animation"
                       : "bg-base-100 hover:bg-secondary"
                   }`}
-                  key={contractName}
+                  key={(contractName as Key)}
                   onClick={() => setSelectedContract(contractName)}
                 >
                   {contractName}
