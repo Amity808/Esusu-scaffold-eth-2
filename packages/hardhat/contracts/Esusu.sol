@@ -82,12 +82,12 @@ contract Esusu {
 
     }
 
-    function depositChildSavingsReg(uint256 _age, address _father) external payable  {
+    function depositChildSavingsReg(uint256 _target, address _father) external payable  {
         ChildSavings storage savings = _childSavings[msg.sender];
         // uint256 currentTimeStap = block.timestamp;
         // uint256 getPay = currentTimeStap + _age * 365 * 24 * 60 * 60;
-        savings.targetChild = _age;
-        savings.childAge =_age;
+        savings.targetChild = _target;
+        savings.childAge =_target;
         // savings.amount += ;
         savings.childAddress = payable (msg.sender);
         savings.fatherAddress = _father;

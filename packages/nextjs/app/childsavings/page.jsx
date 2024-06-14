@@ -30,7 +30,7 @@ const Childsavings = () => {
   return (
     <div style={headerStyle} className=' h-screen'>
         <div>
-            {/* <Navbar /> */}
+            <Navbar />
         </div>
         <ChildSavings />
         <ChildSaveDeposit address={address} />

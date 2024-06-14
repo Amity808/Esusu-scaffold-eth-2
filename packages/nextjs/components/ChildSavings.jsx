@@ -37,14 +37,17 @@ const ChildSavings = () => {
 
   const saveAmount = BigInt(Math.round(amount * 1000000))
 
+  const formatToether = parseEther(saveAmount.toString())
 
+  console.log(formatToether, "target ")
   const savepromise = async (e) => {
     e.preventDefault();
+
     try {
       await writeContractAsync({
         functionName: "depositChildSavingsReg",
-        args: [parseInt(age), gurdianAddress],
-        value: parseEther(amount)
+        args: [formatToether, gurdianAddress],
+        // value: 
       })
       handleClear();
     } catch (error) {
